@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="clodnote"
+  id="myeclipse.1361932136448"
+  context-root="/clodnote"
+  j2ee-spec="5.0"
+  archive="clodnote.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

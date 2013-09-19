@@ -1,0 +1,34 @@
+1，第一次运行时，生成一个xls文件，并且给book添加两个sheet "ping"和"tracert"
+2,给sheet添加标题
+3,把生成的信息添加到表中
+	3.5在信息的最后一行加上一个"end"标示，以表示这个文档编辑到了这里，下次追加信息直接查找该字符并替换
+4,保存并且关闭流
+
+
+5,第二次打开,查找"end"标示符号，若没有，则再次创建两个sheet并且添加标题
+
+目前问题：如何打开之前创建的xls文件
+如何判断是否存在
+new File()不是如果不存在就会创建一个文件的么？用file.exists()来判断是否存在
+
+当无法ping通或者提交了空的参数时候会出现“out of bounds ”的错误  ok
+用workbook获取之前的信息，再新建一个writbablebook。替换实现？   可行！！
+
+问题：ping超时该怎么处理？ ok
+问题：找不到主机， ok
+问题：中英文如何处理？
+问题：tracert结果怎么处理   ok!
+不能重复使用下面的代码？
+while(line=br.readLine()!=null){
+时间问题：xls文件中单元格格式默认为：常规，改为日期即可.给单元格加format
+		jxl.write.DateFormat df = new jxl.write.DateFormat("yyyy MM dd hh:mm"); 
+		jxl.write.WritableCellFormat wcfDF = new jxl.write.WritableCellFormat(df); 
+		jxl.write.DateTime labelDTF = new jxl.write.DateTime(3, startRow2, new java.util.Date(), wcfDF); 
+		sheet2.addCell(labelDTF); 
+
+
+
+文件操作：多线程问题
+
+问题：msx-hops超出实际跳数,读取的时候是以:max-hops+2来展示行的，而如果在max-hops范围内完成了测试就出错了 ok!
+如何获取一条记录的实际行数，用finCell(String,startCol,startRow,endCol,endRow,false); 

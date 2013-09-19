@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+     <!-- 指定允许上传的文件最大字节数。默认值是2097152(2M) -->
+    <constant name="struts.multipart.maxSize" value="10971520"/>
+     <constant name="struts.multipart.saveDir" value="C:/tmp/"/>
+	
+	  <package name="cloudnote-deafult" extends="struts-default">
+			<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"/>
+		</global-exception-mappings>
+	</package>
+	
+	<package name="noteaction" namespace="/" extends="cloudnote-deafult">
+		<action name="register" class="cloudnote.RegisterAction">
+			<result name="success">/cloud_note.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+
+		<action name="login" class="cloudnote.LoginAction">
+			<result name="success">/home.jsp</result>
+			<result name="input">/cloud_note.jsp</result>
+		</action>
+
+		<action name="loginout" class="cloudnote.LoginOutAction">
+			<result name="success">/cloud_note.jsp</result>
+		</action>
+
+		<action name="advice" class="cloudnote.AdviceAction" >
+			<result name="success">/sugetions.jsp</result>
+		</action>
+		
+	   <action name="aboutnote" class="cloudnote.NoteAction">
+			<result name="success">/my_note.jsp</result>
+			<result name="index">/home.jsp</result>
+			<result name="thenote">/editnote.jsp</result>
+		</action>
+
+		
+		 <action name="download" class="cloudnote.DownloadAction">  
+            <result type="stream" name="success">  
+                <param name="contentType">application/octet-stream</param>  
+                <!-- 要有相对应的getDownloadFile()方法返回值是 InputStream -->  
+                <param name="inputName">downloadFile</param>  
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>  
+                <param name="bufferSize">4096</param>  
+            </result>  
+        </action>  
+		
+		<action name="AndroidRegister" class="cloudnote.AndroidAction" method="first">
+		</action>
+		
+	</package>
+
+
+</struts>

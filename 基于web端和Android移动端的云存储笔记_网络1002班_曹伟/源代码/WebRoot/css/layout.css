@@ -1,0 +1,60 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body { margin:0 auto; font-size:12px; font-family:Verdana; line-height:1.5;}
+ul,dl,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;}
+ul { list-style:none;}
+a{ text-decoration:none; color:#000000;}
+img { border:0px;}
+.clear { clear:both; height: 0; line-height: 0; font-size: 0; }
+.center{ margin-left:auto; margin-right:auto;}
+.input_label{ font-size:20px;}
+.input_textbar{height:28px; width:200px; font-size:16px; padding-left:10px;  /*border:solid 1px black;*/ }
+.btn{font-size:20px; margin-left:10px;}
+.required{ font-size:14px; color:red;}
+
+body{ background:#AABFAA;}
+#container{ overflow:hidden;}
+
+#header{height:76px; width:100%;  background:url(../images/bg_322-81.png) repeat-x;overflow:hidden;}
+	
+	#header .bluebar{ width:100%;height:8px; background: #007FFF; }
+	#header .nav_logo{width:206px; height:58px;float:left; margin-top:5px; margin-left:200px; background:url(../images/cloudnote_193-58.png) no-repeat;}
+	#header ul{width:70%; height:68px; margin:0 auto;  background: url(../images/bg_322-81.png) repeat-x; }
+		#header ul li{display:block; height:68px; line-height:68px;text-align:center; float:left;margin:auto 0 auto 20px;font-size:20px; }
+			#header ul li a{ display:block;width:120px; font-weight: bolder;color: #FFF;}
+				#header ul li a:hover{ background: #551FFF;}
+				
+				
+#content{width:900px;  margin-left:200px;  /*border: solid 1px black;*/}
+.index_bg{background: url(../images/background.jpg) 0 0;}
+	#content .login{width:403px; height:515px;float:left; margin:0 0 0 0; background:url(../images/login_bg.png) repeat-y;/* border:solid 1px black;*/ }
+		#content .login .form_login{width:300px; margin:20px auto; /*border:1px solid black;*/}
+		#content .login .title{ font-size:20px; font-style:italic; }
+		#content .login .btn_login{ display:block; width:133px; height:40px;  font-size:20px; font-weight:bold; line-height:40px;  background: url(../images/btn_login-22-34.png)}
+		#content .login .btn_reg{ font-size:15px;}
+
+		#content .version{ font-size:14px; margin-left:80px;}
+		#content .btn_download{ display:block;width:180px; height:49px; background:url(../images/btn_download.png); }
+		#download img{ margin:10px 0 10px 80px;}
+		
+		/*regesiter form*/
+	#content .form_reg{width:570px; margin:30px auto 0 auto;/* border:1px solid black;*/ /*background:#125687;*/}
+	#content .form_reg .title {font-size:20px; font-style:italic; margin:20px auto 0 auto ;}
+	#content .form_reg #btn_reg{font-size:20px;margin-left:170px;}
+	#content .form_reg .input_label{font-size:20px; margin-left:60px;}
+	
+/*introduce.html*/	
+#content .product_tab{ margin:30px auto;;width:700px; height:550px;   background: url(../images/4594747_092821351695_2_900-725.jpg) no-repeat; font:"微软雅黑", "宋体", Arial, "MS Serif"; font-size:20px; color:#FFDF00;}
+#content .product_tab p{ width:500px; margin: 0 auto;}
+/*contact_us.html*/
+#content .contact_content{background:url(../images/1576353_091452029_2.jpg) no-repeat; width:600px; height:605px; margin:0 auto;}	
+#content .contact_content a{text-decoration:underline; color:blue; font-style:italic;}	
+	
+#footer{margin-top:128px;height:30x;width:1440px; /*border:solid 1px black;*/}
+	#footer .cpright{ text-align:center; display:block; margin:30px auto; }
+	
+	
+	
+	.sug_board{margin-top:60px;}
+	.sug_text{margin-top:40px; padding:8px; width:700px; height:210px;background: #AADFFF;opacity:0.5; filter:alpha(opacity=50); resize:none; }
+	#sug_submit{margin-left:350px;}

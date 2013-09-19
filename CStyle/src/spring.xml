@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+ 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+  	http://www.springframework.org/schema/tx
+ 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+ 	http://www.springframework.org/schema/aop 
+ 	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+ ">
+ 
+ 
+	<!-- 自动扫描包(自动注入) -->
+	<context:component-scan base-package="yingjun.dao,yingjun.service" /> 
+    <!-- 引入属性文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+ 
+
+ <!-- 配置数据源 -->
+ <bean id="DataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+   <property name="driverClassName" value="${jdbc.driverClassName}"/>
+   <property name="url" value="${jdbc.url}"/>
+   <property name="username" value="${jdbc.username}"/>
+   <property name="password" value="${jdbc.password}"/>
+ </bean>
+ 
+ <!-- Hibernate配置  -->
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" >
+    <property name="dataSource" ref="DataSource"/>
+    <property name="packagesToScan">
+      <list>
+        <value>yingjun.model</value>
+      </list>
+    </property>
+    <property name="hibernateProperties">
+     <props>
+		<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+		<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+		<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+		<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+	</props>
+    </property>
+  </bean>
+ 
+ 
+ <!-- Transaction配置 -->
+ <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  <!-- 声明试事务管理 -采用annotation方式-->
+  <!-- <tx:annotation-driven transaction-manager="txManager"/>-->
+ 
+  <!-- 声明式事务管理 -采用XML方式-->
+    <!--常见几张几种事务传播行为类型
+       PROPAGATION_REQUIRED 如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。
+       PROPAGATION_SUPPORTS 支持当前事务，如果当前没有事务，就以非事务方式执行。
+       PROPAGATION_MANDATORY 使用当前的事务，如果当前没有事务，就抛出异常。
+       PROPAGATION_REQUIRES_NEW 新建事务，如果当前存在事务，把当前事务挂起。
+    -->
+
+  <tx:advice id="txAdvice" transaction-manager="txManager">
+    <tx:attributes>
+            <tx:method name="add*"  />
+			<tx:method name="delete*" />
+			<tx:method name="update*" />
+			<tx:method name="preview*" />
+			<tx:method name="*login" />
+			  <tx:method name="frontadd*" />
+		    <tx:method name="frontupdate*" />
+		    <tx:method name="frontdelete*" />
+			<tx:method name="*" propagation="SUPPORTS" read-only="true" />
+    </tx:attributes>
+  </tx:advice>
+  
+   <aop:config>
+    <aop:pointcut id="productServiceMethods"
+                expression="execution(* yingjun.service..*Impl.*(..))"/>
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods"/>
+  </aop:config>
+</beans>

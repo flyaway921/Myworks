@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/* CSS Document 
+作用于页面最顶端
+*/
+#front_index_top{
+	width:100%;
+	height:35px;
+	background-color:#000000;
+	/* 浮动对于其他浏览器 */
+	position:fixed;
+	top:0px;
+	/* 浮动对于 IE6 */
+    _position: absolute;
+    _top: expression(documentElement.scrollTop + "px");
+	filter:alpha(opacity=60);
+    opacity:.6;
+	z-index:998;
+}
+#front_index_top #top1{
+	color:#FFF;
+	font-size:14px;
+	margin-left:15%;
+	height:26px;
+	margin-top: 7px;
+	float: left;
+	
+}
+#front_index_top #top2{
+	color:#FFF;
+	font-size:14px;
+	margin-left:65%;
+	height:26px;
+	margin-top: 9px;
+	
+}
+#front_index_top  a{color:#FFF;}
+#front_index_top  a:hover{ color:#F00;}
+#front_index_top  form input{ border:1px solid green; font-style:italic; }
+.front_index_topa{
+	font-weight:bold;
+	color: red;
+	
+}
+
+a font.front_index_topa:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+
+/* CSS Document 
+作用于榜单top10栏目
+*/
+#top10 hr {
+	border: 1px dashed #666666;
+	margin: 2px;
+	
+}
+
+#top10 a:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+#top10 ul li {
+	line-height: 26px;
+	font-size: 13px;
+	height: 25px;
+	overflow: hidden;
+}
+
+
+
+#top10 i {
+	float: left;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	display: inline;
+	margin: 5px 5px 0 0;
+	font-family: Arial;
+	background: url(../images/front/commonMap.png) -51px 0 no-repeat;
+}
+
+#top10 i.i1 {
+	background-position: 0 0;
+}
+
+#top10 i.i2{
+	background-position: -17px 0;
+}
+
+#top10 i.i3 {
+	background-position: -34px 0;
+}
+
+
+

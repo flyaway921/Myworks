@@ -1,0 +1,223 @@
+body{
+	
+	margin:0;padding:0; background-attachment: fixed;background-color: #FEF0E7;
+}
+ul,dl,dd,h1,h2,h3,h4,h5,h6,form,p {
+	padding: 0;
+	margin: 0;
+}
+h2{
+ color: #E9650E;
+}
+hr{
+  border-style: dotted;
+}
+ul {
+	list-style: none;
+}
+ a {
+	text-decoration: none;
+	color: black;
+}
+table td a{
+     text-decoration: none;
+	color: black;
+}
+table td a:hover{
+     text-decoration: underline;
+     color: red;
+}
+
+
+img {
+	border: 0px;
+}
+#myindex_myinfo table td {
+ height: 30px;	
+ font-size: 14px
+}
+#myindex_myinfo table td input, #myindex_myinfo table td select{
+ border: 1px solid #E9650E;
+ height: 22px;
+ 
+ 
+}
+#myindex_myinfo table td input:FOCUS,#myindex_myinfo table td select:FOCUS{
+ border: 2px solid #E9650E;
+}
+
+
+#myindex_register table td {
+ height: 40px;	
+ font-size: 14px
+}
+#myindex_register table td input, #myindex_register table td select{
+ border: 1px solid #E9650E;
+ height: 23px;
+}
+
+
+#myindex_register table td input:FOCUS,#myindex_register table td select:FOCUS{
+ border: 2px solid #E9650E;
+}
+
+.topfont{
+color: rgb(255, 255, 255);
+font-family: Helvetica, Tahoma, Arial, sans-serif;
+font-size: 30px;
+font-weight: bold;
+position: absolute;
+margin-top: 30px;
+
+
+}
+
+.topnavindex a{
+text-decoration: underline;
+color: rgb(255, 255, 255);
+font-family: Helvetica, Tahoma, Arial, sans-serif;
+font-size: 13px;
+position: absolute;
+margin-left: 850px;
+margin-top: 45px
+}
+
+
+.topnavindex a:hover{
+text-decoration: none;
+	
+}
+
+.cmyworks{
+   position: absolute;
+   margin-left: 80%;
+   margin-top: -15px;
+}
+
+.cmyworks a{
+	color:#FF6600;
+   font-size:14px;
+   text-decoration: underline;
+}
+.cmyworks a:hover{
+	color:#FFFFFF;
+   background-color:#FF6600;
+   text-decoration: none;
+}
+
+.backmyworks{
+   font-size: 20px;
+}
+
+.backmyworks a{
+	color:#FF6600;
+   font-size:14px;
+   text-decoration: underline;
+}
+.backmyworks a:hover{
+	color:#FFFFFF;
+   background-color:#FF6600;
+   text-decoration: none;
+}
+
+
+
+
+.style1{
+   font-weight: bold;
+   color: #E9650E;
+}
+.textstyle1{
+   width: 23px;
+}
+
+.myindex_workslist td {
+	height: 20px;	
+    font-size: 1em;
+    padding: 5px 0;
+	border-top: 1px dashed #66605C;
+}
+
+.myindex_workslist tr:HOVER{
+   background-color:#FEF0E7;
+}
+
+
+.myindex_workslist td a{
+   color:#FF6600;
+   text-decoration: none;
+   font-size: 13px;
+}
+.myindex_workslist td a:HOVER{
+    color:#FFFFFF;
+    text-decoration: underline;
+    background-color:#FF6600;
+}
+.myindex_workslist input[type="text"]{
+	border: 1px solid #E9650E;
+    height: 16px;
+}
+.myindex_workslist input[type="submit"]{
+	border: 1px solid #E9650E;
+    background-color: #E9650E;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.myindex_workslist input[type="text"]:FOCUS{
+	border: 1px dotted #E9650E;
+}
+.myindex_workslist input[type="button"]{
+    border: 1px solid #E9650E;
+    cursor: pointer;
+}
+.myindex_workslist select{
+	border: 1px solid #E9650E;
+}
+
+/*myindex_addworks*/
+
+#myindex_addworks select,#myindex_addworks select{
+    border: 1px solid #E9650E;
+    height: 23px;
+}
+#myindex_addworks input,#myindex_updateworks input{
+    border: 1px solid #E9650E;
+    height: 22px;
+}
+#myindex_addworks input:FOCUS,#myindex_updateworks input:FOCUS{
+    border: 1px solid blue;
+}
+
+
+/*myindex_rankings*/
+#myindex_rangkings i {
+	float: left;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	display: inline;
+	margin: 5px 5px 0 0;
+	font-family: Arial;
+	background: url(../images/front/commonMap.png) -51px 0 no-repeat;
+}
+
+#myindex_rangkings .i1 {
+	background-position: 0 0;
+}
+
+#myindex_rangkings .i2 {
+	background-position: -17px 0;
+}
+
+#myindex_rangkings .i3 {
+	background-position: -34px 0;
+}
+
+
+
+
+
+
